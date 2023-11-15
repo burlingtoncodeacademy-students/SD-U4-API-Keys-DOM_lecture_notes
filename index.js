@@ -22,3 +22,12 @@
         - https://disneyapi.dev/docs
     - There isn't a required standard but being a clear as possible can make one API easy to use while another very difficult.
 */
+import apiKey from "./key.js";
+const baseURL = `https://api.spoonacular.com/recipes/random`;
+
+const buildURL = `${baseURL}/?apiKey=${apiKey}`;
+
+fetch(buildURL)
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
